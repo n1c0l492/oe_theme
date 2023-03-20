@@ -1,0 +1,13 @@
+livestream_link_disclosure:
+  js:
+    js/event_livestream.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+registration_link_disclosure:
+  js:
+    js/event_registration.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

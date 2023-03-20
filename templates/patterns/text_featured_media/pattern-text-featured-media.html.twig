@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Text with featured media.
+ *
+ * Variant "left_simple" is used by default.
+ */
+#}
+
+{% set variant = variant|default('left_simple') %}
+{% set text = text|render %}
+{% set video_ratio = video_ratio|replace({':': '-'}) %}
+{% set allowed_values = ['16-9','4-3','3-2','1-1'] %}
+{% if video_ratio not in allowed_values %}
+  {# Rely on ECL. #}
+  {% set video_ratio = '' %}
+{% endif %}
+
+{# We consider the text position while ECL needs the media position, so we need to reverse the values. #}
+{% if 'right' in variant %}
+  {% set _position = 'left' %}
+{% else %}
+  {% set _position = 'right' %}
+{% endif %}
+
+{% if link %}
+  {% set link_type = 'featured' in variant ? 'cta' : 'standalone' %}
+  {% set call_to_action_link = {
+    link: {
+      type: link_type,
+      label: link.label,
+      path: link.path,
+      icon_position: 'after'
+    },
+    icon: get_link_icon(link.path)
+  }%}
+{% endif %}
+
+{% if image or video %}
+    {% if image %}
+      {% set _media_container = {
+        'image': image.src,
+        'alt': image.alt,
+        'description': caption,
+      } %}
+    {% elseif video %}
+      {% set _media_container = {
+        'embedded_media': video,
+        'ratio': video_ratio,
+        'description': caption,
+      } %}
+    {% endif %}
+{% endif %}
+
+{% if title %}
+  <h2 class='ecl-u-type-heading-2'>{{ title }}</h2>
+{% endif %}
+
+{% include '@ecl-twig/featured-item' with {
+  type: highlighted == true ? 'extended' : '',
+  title: text_title|default(''),
+  description: text|default(''),
+  link: call_to_action_link,
+  media_container: _media_container|default([]),
+  position: _position,
+} %}

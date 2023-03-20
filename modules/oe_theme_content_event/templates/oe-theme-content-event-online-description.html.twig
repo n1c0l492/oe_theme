@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme for the online description extra field on event content type.
+ */
+#}
+{% if description is not empty %}
+  <div {% if hidden %}class="ecl-u-d-none"{% endif %} data-livestream-element="true">
+    <h3 class="ecl-u-type-heading-3">{{ 'Livestream'|t }}</h3>
+    {{ description }}
+    {{ pattern('link', {
+      variant: 'cta',
+      text: label,
+      url: url,
+      external_link: url.toString()|is_external_url,
+      icon_path: ecl_icon_path
+    }) }}
+  </div>
+{% endif %}

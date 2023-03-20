@@ -1,0 +1,50 @@
+version: '2'
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: DOCKERFILE
+    image: d-prd-registry.jrc.it/ubi9/httpd-24
+    working_dir: /var/www/html
+    ports:
+      - 80:8080
+    volumes:
+      - .:/var/www/html # Non Mac users.
+      # - nfsmount:/var/www/html # Mac Users with the nfsmount volume.
+    environment:
+      COMPOSERVER: "--2"
+      XDEBUG_CONFIG: "client_host=172.17.0.1" # Non-Mac users.
+      # XDEBUG_CONFIG: "client_host=host.docker.internal" # Mac users.
+      XDEBUG_MODE: "develop, debug"
+      PHP_IDE_CONFIG: "serverName=Docker"
+      # Enable step debugging for all PHP request. See ./README.md#step-debugging for more information.
+      # XDEBUG_SESSION: 1
+  mysql:
+    container_name: mysql
+    image: d-prd-registry.jrc.it/mysql:8
+    command: --innodb-log-file-size=1G --max_allowed_packet=1G --innodb-buffer-pool-size=512M --wait_timeout=3000 --net_write_timeout=3000 --log_error_verbosity=3
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      ports:
+        - 3306:3306
+  # Spawn a Selenium server which also includes a VNC server on localhost:5900 (the password is "secret")
+  node:
+    container_name: node
+    image: d-prd-registry.jrc.it/node:12.21.0
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV="development"
+      - SHELL=bash
+    volumes:
+      - ./:/home/node/app
+    command: "sleep infinity"
+  sparql:
+    container_name: sparql
+    image: d-prd-registry.jrc.it/openeuropa/triple-store-dev
+    environment:
+      - SPARQL_UPDATE=true
+      - DBA_PASSWORD=dba
+    ports:
+      - "8890:8890"

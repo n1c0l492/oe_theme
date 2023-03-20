@@ -1,0 +1,341 @@
+- branding: core
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      breadcrumb:
+        -
+          href: "http://www.example.com/"
+          label: "European Commission"
+        -
+          href: "http://www.example.com/announcements/"
+          label: "Announcements"
+        -
+          href: "http://www.example.com/about-european-commission/"
+          label: "About the European Commission"
+        -
+          href: "http://www.example.com/organisation-structure/"
+          label: "Organisational structure"
+        -
+          href: "http://www.example.com/how-commission-organized/"
+          label: "How the Commission is organised"
+        -
+          href: "http://www.example.com/news/"
+          label: "News"
+  assertions:
+    count:
+      '.ecl-page-header.ecl-page-header--negative': 1
+      '.ecl-breadcrumb__segment': 7
+      '.ecl-page-header__background': 0
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 0
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-page-header--overlay-dark': 0
+      '.ecl-page-header--overlay-light': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+      '.ecl-breadcrumb__segment:nth-child(1)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/"]': "European Commission"
+      '.ecl-breadcrumb__segment:nth-child(2).ecl-breadcrumb__segment--ellipsis button': "…"
+      '.ecl-breadcrumb__segment:nth-child(3)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/announcements/"]': "Announcements"
+      '.ecl-breadcrumb__segment:nth-child(4)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/about-european-commission/"]': "About the European Commission"
+      '.ecl-breadcrumb__segment:nth-child(5)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/organisation-structure/"]': "Organisational structure"
+      '.ecl-breadcrumb__segment:nth-child(6)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/how-commission-organized/"]': "How the Commission is organised"
+      '.ecl-breadcrumb__segment:nth-child(7)': "News"
+- branding: core
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      breadcrumb:
+        -
+          href: "http://www.example.com/"
+          label: "European Commission"
+        -
+          href: "http://www.example.com/announcements/"
+          label: "Announcements"
+        -
+          href: "http://www.example.com/about-european-commission/"
+          label: "About the European Commission"
+        -
+          href: "http://www.example.com/organisation-structure/"
+          label: "Organisational structure"
+        -
+          href: "http://www.example.com/how-commission-organized/"
+          label: "How the Commission is organised"
+        -
+          href: "http://www.example.com/news/"
+          label: "News"
+      background_image_url: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg'
+  assertions:
+    count:
+      '.ecl-page-header.ecl-page-header--negative': 1
+      '.ecl-breadcrumb__segment': 7
+      '.ecl-page-header__background[style="background-image: url(https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg)"]': 1
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 0
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-page-header--overlay-dark': 0
+      '.ecl-page-header--overlay-light': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+      '.ecl-breadcrumb__segment:nth-child(1)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/"]': "European Commission"
+      '.ecl-breadcrumb__segment:nth-child(2).ecl-breadcrumb__segment--ellipsis button': "…"
+      '.ecl-breadcrumb__segment:nth-child(3)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/announcements/"]': "Announcements"
+      '.ecl-breadcrumb__segment:nth-child(4)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/about-european-commission/"]': "About the European Commission"
+      '.ecl-breadcrumb__segment:nth-child(5)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/organisation-structure/"]': "Organisational structure"
+      '.ecl-breadcrumb__segment:nth-child(6)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/how-commission-organized/"]': "How the Commission is organised"
+      '.ecl-breadcrumb__segment:nth-child(7)': "News"
+- branding: core
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      hide_title: true
+  assertions:
+    count:
+      '.ecl-page-header.ecl-page-header--negative': 1
+      '.ecl-page-header__background': 0
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 1
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-breadcrumb__container': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+- branding: standardised
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      breadcrumb:
+        -
+          href: "http://www.example.com/"
+          label: "European Commission"
+        -
+          href: "http://www.example.com/announcements/"
+          label: "Announcements"
+        -
+          href: "http://www.example.com/about-european-commission/"
+          label: "About the European Commission"
+        -
+          href: "http://www.example.com/organisation-structure/"
+          label: "Organisational structure"
+        -
+          href: "http://www.example.com/how-commission-organized/"
+          label: "How the Commission is organised"
+        -
+          href: "http://www.example.com/news/"
+          label: "News"
+  assertions:
+    count:
+      '.ecl-page-header': 1
+      '.ecl-page-header--negative': 0
+      '.ecl-breadcrumb__segment': 7
+      '.ecl-page-header__background': 0
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 0
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+      '.ecl-breadcrumb__segment:nth-child(1)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/"]': "European Commission"
+      '.ecl-breadcrumb__segment:nth-child(2).ecl-breadcrumb__segment--ellipsis button': "…"
+      '.ecl-breadcrumb__segment:nth-child(3)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/announcements/"]': "Announcements"
+      '.ecl-breadcrumb__segment:nth-child(4)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/about-european-commission/"]': "About the European Commission"
+      '.ecl-breadcrumb__segment:nth-child(5)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/organisation-structure/"]': "Organisational structure"
+      '.ecl-breadcrumb__segment:nth-child(6)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/how-commission-organized/"]': "How the Commission is organised"
+      '.ecl-breadcrumb__segment:nth-child(7)': "News"
+- branding: standardised
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      breadcrumb:
+        -
+          href: "http://www.example.com/"
+          label: "European Commission"
+        -
+          href: "http://www.example.com/announcements/"
+          label: "Announcements"
+        -
+          href: "http://www.example.com/about-european-commission/"
+          label: "About the European Commission"
+        -
+          href: "http://www.example.com/organisation-structure/"
+          label: "Organisational structure"
+        -
+          href: "http://www.example.com/how-commission-organized/"
+          label: "How the Commission is organised"
+        -
+          href: "http://www.example.com/news/"
+          label: "News"
+      background_image_url: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg'
+      overlay: 'light'
+  assertions:
+    count:
+      '.ecl-page-header': 1
+      '.ecl-breadcrumb__segment': 7
+      '.ecl-page-header__background[style="background-image: url(https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg)"]': 1
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 0
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-page-header--overlay-dark': 0
+      '.ecl-page-header--overlay-light': 1
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+      '.ecl-breadcrumb__segment:nth-child(1)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/"]': "European Commission"
+      '.ecl-breadcrumb__segment:nth-child(2).ecl-breadcrumb__segment--ellipsis button': "…"
+      '.ecl-breadcrumb__segment:nth-child(3)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/announcements/"]': "Announcements"
+      '.ecl-breadcrumb__segment:nth-child(4)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/about-european-commission/"]': "About the European Commission"
+      '.ecl-breadcrumb__segment:nth-child(5)[data-ecl-breadcrumb-item="expandable"] a[href="http://www.example.com/organisation-structure/"]': "Organisational structure"
+      '.ecl-breadcrumb__segment:nth-child(6)[data-ecl-breadcrumb-item="static"] a[href="http://www.example.com/how-commission-organized/"]': "How the Commission is organised"
+      '.ecl-breadcrumb__segment:nth-child(7)': "News"
+- branding: standardised
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      language_switcher:
+        current: "French"
+        unavailable: "English"
+        is_primary: true
+        options:
+          - href: "#"
+            hreflang: "es"
+            label: "Spanish"
+            lang: "es"
+          - href: "#"
+            hreflang: "it"
+            label: "Italian"
+            lang: "it"
+      hide_title: true
+  assertions:
+    count:
+      '.ecl-page-header': 1
+      '.ecl-page-header__background': 0
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__title.ecl-u-sr-only': 1
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-breadcrumb__container': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+- branding: core
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      background_image_url: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg'
+      overlay: 'dark'
+  assertions:
+    count:
+      '.ecl-page-header': 1
+      '.ecl-page-header__background[style="background-image: url(https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg)"]': 1
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-page-header--overlay-dark': 1
+      '.ecl-page-header--overlay-light': 0
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"
+- branding: core
+  pattern:
+    '#type': pattern
+    '#id': page_header
+    '#fields':
+      title: "Business, Economy, Euro<"
+      introduction: "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.<cc>&"
+      metas:
+        - "News article>"
+        - "6 July 2015&"
+        - "Brussels<"
+      background_image_url: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg'
+      overlay: 'light'
+  assertions:
+    count:
+      '.ecl-page-header.ecl-page-header--negative': 1
+      '.ecl-page-header__background[style="background-image: url(https://inno-ecl.s3.amazonaws.com/media/examples/example-image8.jpg)"]': 1
+      '.ecl-page-header__meta .ecl-page-header__meta-item': 3
+      '.ecl-page-header__info-list': 0
+      '.ecl-page-header__info-item': 0
+      '.ecl-page-header--overlay-dark': 0
+      '.ecl-page-header--overlay-light': 1
+    equals:
+      'h1.ecl-page-header__title': "Business, Economy, Euro&lt;"
+      '.ecl-page-header__description': "EU economy, finance and the euro, and practical information for EU businesses and entrepreneurs on product safety, environmental regulations, trade with non-EU countries and competition rules.&lt;cc&gt;&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(1)': "News article&gt;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(2)': "6 July 2015&amp;"
+      '.ecl-page-header__meta .ecl-page-header__meta-item:nth-child(3)': "Brussels&lt;"

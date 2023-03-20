@@ -1,0 +1,32 @@
+FROM d-prd-registry.jrc.it/public/jrc-httpd-fpm
+ARG http_proxy=http://10.168.209.73:8012
+ARG https_proxy=http://10.168.209.73:8012
+ARG ftp_proxy=http://10.168.209.73:8012
+ARG no_proxy="127.0.0.1, localhost, jrc.ec.europa.eu, jrc.it, jrc.org"
+
+# # OPTION 3.1
+# # https://catalog.redhat.com/software/containers/ubi9/php-81/62e8e662f6d3d47e19779b01?tag=1-17&push_date=1677591075000&container-tabs=overview
+# # Add application sources
+# #USER 0
+# ADD app-src .
+# USER 0
+# # Install the dependencies
+# RUN TEMPFILE=$(mktemp) && \
+#     curl -LO "$TEMPFILE" "https://getcomposer.org/installer" && \
+#     php <"$TEMPFILE" && \
+#     ./composer.phar install --no-interaction --no-ansi --optimize-autoloader
+# # Run script uses standard ways to configure the PHP application
+# # and execs httpd -D FOREGROUND at the end
+# # See more in <version>/s2i/bin/run in this repository.
+# # Shortly what the run script does: The httpd daemon and php needs to be
+# # configured, so this script prepares the configuration based on the container
+# # parameters (e.g. available memory) and puts the configuration files into
+# # the approriate places.
+# # This can obviously be done differently, and in that case, the final CMD
+# # should be set to "CMD httpd -D FOREGROUND" instead.
+# #CMD /usr/libexec/s2i/run
+# CMD httpd -D FOREGROUND
+
+# related to ubi9/httpd-24
+ADD app-src/index.html /var/www/html/index.html
+CMD run-httpd
